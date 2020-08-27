@@ -1,0 +1,362 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	overflow-x: hidden;
+	background-color: orange;
+}
+
+.main-content .title-about, .title-contact, .title-portofolio {
+	text-align: center;
+	color: white;
+	font-size: 1.5em;
+	padding-top: 20px;
+}
+
+.about, .portofolio {
+	background-color: #03A9F4;
+	padding-bottom: 20px;
+}
+
+.contact {
+	background-color: orange;
+	padding-bottom: 3px;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+hr {
+	width: 120px;
+	border-top: 2px solid white;
+	margin-bottom: 20px;
+}
+
+section article div p {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+	margin-top: 20px;
+	color: white;
+}
+
+nav {
+	display: flex;
+	background-color: #03A9F4; /* Warna navbar */
+	color: #b5fbff; /*  warna logo Wahyu Septiadi */
+	justify-content: space-around;
+	height: 50px;
+	align-items: center;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+	width: 30%;
+	right: 0;
+	justify-content: space-between;
+}
+
+nav ul li a {
+	color: #b5fbff; /* warna menu */
+	text-decoration: none;
+	font-size: 0.9em;
+}
+
+nav .logo {
+	font-family: 'Satisfy', cursive;
+	letter-spacing: 2px;
+}
+
+nav ul li a:hover {
+	color: white;
+	cursor: pointer;
+}
+
+nav h4:hover {
+	color: white;
+	cursor: pointer;
+}
+
+/* Humburger menu */
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	height: 20px;
+	justify-content: space-between;
+	background-color: #03A9F4; /* Warna navbar */
+	position: relative;
+	z-index: 2;
+}
+
+.menu-toggle input {
+	position: absolute;
+	width: 40px;
+	height: 28px;
+	opacity: 0;
+	left: -5px;
+	top: -4px;
+	cursor: pointer;
+	z-index: 2; /*pindah kedepan*/
+}
+
+.menu-toggle span {
+	display: block;
+	width: 28px;
+	height: 3px;
+	background-color: #b5fbff; /* X */
+	border-radius: 3px;
+	transition: all 0.5s;
+}
+
+/* Anim Hamburger menu */
+.menu-toggle span:nth-child(2) {
+	transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+	transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+	transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+	transform: scale(0);
+	opacity: 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+	transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.container {
+	display: grid;
+}
+
+/* Header */
+.header {
+	display: grid;
+	grid-template-areas:
+	'newportofolio-1 newportofolio-2 newportofolio-3';
+}
+
+.newportofolio-1 {
+	grid-area: newportofolio-1;
+	min-height: 70px;
+	background-image: url(/assets/image/portofolio/one.jpg);
+	background-size: cover;
+	opacity: 0.9;
+	padding: 50px;
+}
+
+.newportofolio-2 {
+	grid-area: newportofolio-2;
+	min-height: 70px;
+	background-image: url(/assets/image/portofolio/two.jpg);
+	background-size: cover;
+	opacity: 0.9;
+	padding: 50px;
+}
+
+.newportofolio-3 {
+	grid-area: newportofolio-3;
+	min-height: 70px;
+	background-image: url(/assets/image/portofolio/three.jpg);
+	background-size: cover;
+	opacity: 0.9;
+	padding: 50px;
+}
+
+/* PORTOFOLIO */
+.portofoliosec {
+	display: grid;
+	gap:15px;
+	margin-left: 15px;
+	margin-right: 15px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portofoliosec .portofolio {
+	background-color: orange;
+	border: 2px solid white;
+	border-radius: 10px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+	margin-bottom: 13px;
+}
+
+section article h5 {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
+}
+
+section article p {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
+}
+
+section article .img-portofolio {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+	margin-top: 15px;
+}
+
+/* CONTACT */
+section article div p {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+footer p {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: black;
+}
+
+/* Button top */
+#btnTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 100;
+  font-size: 14px;
+  border: 2px solid white;
+  background-color: red;
+	outline: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+#btnTop:hover {
+  background-color: white;
+	color: red;
+	border: 2px solid red;
+}
+
+/* Responsive breakpoint */
+
+@media screen and (min-width: 768px) and (max-width: 2000px){
+	nav ul {
+		width: 30%;
+	}
+
+	.newportofolio-1 {
+		grid-area: newportofolio-1;
+		min-height: 0px;
+		background-image: url(/assets/image/portofolio/one.jpg);
+		background-size: cover;
+		text-align: center;
+		opacity: 0.9;
+	}
+
+	.newportofolio-2 {
+		grid-area: newportofolio-2;
+		min-height: 0px;
+		background-image: url(/assets/image/portofolio/two.jpg);
+		background-size: cover;
+		opacity: 0.9;
+	}
+
+	.newportofolio-3 {
+		grid-area: newportofolio-3;
+		min-height: 0px;
+		background-image: url(/assets/image/portofolio/three.jpg);
+		background-size: cover;
+		opacity: 0.9;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+	.menu-toggle {
+		display: flex;
+	}
+	nav ul {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 50%;
+		height: 25vh;
+		background-color: #03A9F4; /* Warna navbar */
+		align-items: center;
+		justify-content: space-evenly;
+		flex-direction: column;
+		z-index: 1;
+		transform: translateX(100%);
+		transition: all 2s;
+		opacity: 0;
+	}
+
+	nav ul.slide {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@media screen and (min-width:200px) and (max-width:500px) {
+	.menu-toggle {
+		display: flex;
+	}
+	nav ul {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 50%;
+		height: 25vh;
+		background-color: #03A9F4; /* Warna navbar */
+		align-items: center;
+		justify-content: space-evenly;
+		flex-direction: column;
+		z-index: 1;
+		transform: translateX(100%);
+		transition: all 2s;
+		opacity: 0;
+		margin-top: 30px;
+	}
+
+	nav ul.slide {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	.header {
+		display: grid;
+		grid-template-areas:
+		'newportofolio-1'
+		'newportofolio-2'
+		'newportofolio-3';
+	}
+
+	.newportofolio-1, .newportofolio-2, .newportofolio-3 {
+		display: none;
+	}
+}
